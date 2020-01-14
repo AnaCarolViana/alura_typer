@@ -1,0 +1,17 @@
+.fraseDesafio{
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.campoDigitacao{
+    font-size: 1.5em;
+    height: 6em;
+}
+
+.campoDesativado{
+    background-color: lightgray;
+}
+
+.icones{
+    vertical-align: middle;
+}
