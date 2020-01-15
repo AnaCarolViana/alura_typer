@@ -3,24 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <h1>Alura Typer</h1>
-    <p class="fraseDesafio">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis placeat error dolorum, at, accusamus ea totam unde soluta vitae doloribus ullam nesciunt adipisci deleniti cumque natus. Suscipit numquam corrupti quia.</p>
 
-    <ul class="informacoes">
-        <li><span id="tamanhoFrase">30</span> palavras</li>
-        <li><span class="tempoDigitacao">2</span> segundos</li>
-    </ul>
-
-    <textarea class="campoDigitacao" rows="8" cols="48"></textarea>
-    <button class="botaoReiniciar">Reiniciar Jogo</button>
-
-    <ul>
-        <li><span class="contadorCaracteres">0</span> caracteres</li>
-        <li><span class="contadorPalavras">0</span> palavras</li>
-    </ul>
-
+    <div class="container">
+        <h1 class="center">Alura Typer</h1>
+        <p class="fraseDesafio">Teste para comparar escrita!</p>
+    
+        <ul class="informacoes center">
+            <li>
+                <i class="small material-icons icones">dehaze</i>
+                <span id="tamanhoFrase">30</span> palavras
+            </li>
+            <li>
+                <i class="small material-icons icones">query_builder</i>
+                <span class="tempoDigitacao">10</span> segundos
+            </li>
+        </ul>
+    
+        <textarea class="campoDigitacao" rows="8" cols="48"></textarea>
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons botaoReiniciar">restore</i></a>
+        <ul class="center">
+            <li><span class="contadorCaracteres">0</span> caracteres</li>
+            <li><span class="contadorPalavras">0</span> palavras</li>
+        </ul>
+        
+        <section class="placar">
+            <h3 class="center">Placar</h3>
+            <table class="centered bodered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nº de Palavras</th>
+                        <th>Res</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+   
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
 </body>
