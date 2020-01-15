@@ -4,7 +4,8 @@ var campo = $(".campoDigitacao");
 $(function(){
     atualizaTamanhoFrase()
     inicializaContadores()
-    incicializaCronometro()
+    inicializaCronometro()
+    comparaPalavras()
     $(".botaoReiniciar").click(reiniciaJogo)
 });
 
@@ -27,19 +28,35 @@ function inicializaContadores(){
     })
 };
 
-function incicializaCronometro(){
-    var tempoRestante = $(".tempoDigitacao").text()
-        campo.one("focus", function(){
-    var cronometro = setInterval(function(){
-        tempoRestante--
-            $(".tempoDigitacao").text(tempoRestante)
-        if(tempoRestante < 1){ 
-            campo.attr("disabled", true)
-                clearInterval(cronometro)
+function inicializaCronometro() {
+    var tempoRestante = $(".tempoDigitacao").text();
+    campo.one("focus", function() {
+        var cronometro = setInterval(function() {
+            tempoRestante--;
+            $(".tempoDigitacao").text(tempoRestante);
+            if (tempoRestante < 1) {
+                campo.attr("disabled", true);
+                clearInterval(cronometro);
+                campo.toggleClass("campoDesativado");
             }
-        },1000)
-    })
-};
+        }, 1000);
+    });
+}
+
+function comparaPalavras(){
+    var frase = $(".fraseDesafio").text()
+    campo.on("input", function(){
+    var digitado = campo.val()
+    var comparavel = frase.substr(0,digitado.length)
+        if(digitado == comparavel){
+            campo.addClass("digitacaoCorreta")
+            campo.removeClass("digitacaoIncorreta")
+        } else {
+            campo.addClass("digitacaoIncorreta")
+            campo.removeClass("digitacaoCorreta")
+        }
+    });
+}
 
 function reiniciaJogo(){
     campo.attr("disabled", false)
@@ -47,5 +64,9 @@ function reiniciaJogo(){
     $(".contadorPalavras").text("0")
     $(".contadorCaracteres").text("0")
     $(".tempoDigitacao").text(tempoInicial)
-    incicializaCronometro()
+
+    inicializaCronometro()
+    campo.toggleClass("campoDesativado")
+    campo.removeClass("digitacaoCorreta")
+    campo.removeClass("digitacaoIncorreta")
 };
