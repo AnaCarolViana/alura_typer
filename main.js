@@ -35,13 +35,18 @@ function inicializaCronometro() {
             tempoRestante--;
             $(".tempoDigitacao").text(tempoRestante);
             if (tempoRestante < 1) {
-                campo.attr("disabled", true);
                 clearInterval(cronometro);
-                campo.toggleClass("campoDesativado");
+                finalizaJogo()
             }
         }, 1000);
-    });
-}
+    })
+};
+
+function finalizaJogo(){
+    campo.attr("disabled", true);
+    campo.toggleClass("campoDesativado");
+    inserePlacar()
+};
 
 function comparaPalavras(){
     var frase = $(".fraseDesafio").text()
