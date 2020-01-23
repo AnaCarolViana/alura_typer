@@ -1,15 +1,61 @@
+body{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 15pt;
+    color: #FFA600;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    color: #F44336;
+}
+
+.planoFundo{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0.1;
+}
+
+.container{
+    position: absolute;
+    margin-top: -59rem;
+    margin-left: 13rem;
+}
+
 .fraseDesafio{
     font-size: 1.5em;
     text-align: left;
+    color: #006997;
 }
 
+h3{
+    color:#408977;
+}
+
+th{
+    color: #483d8b;
+}
+
+td{
+    color: #2E96DE;
+}
 .campoDigitacao{
     font-size: 1.5em;
+    color: #000000;
     height: 6em;
+    border: 1ch solid rgba(19, 19, 19, 0.160);
+}
+
+.digitacaoCorreta{
+    border: 1ch solid rgba(0, 125, 30, 0.400);
+}
+
+.digitacaoIncorreta{
+    border: 1ch solid rgba(251, 36, 33, 0.400);
 }
 
 .campoDesativado{
-    background-color: lightgray;
+    background-color: rgba(164, 178, 177, 0.376);
 }
 
 .icones{
