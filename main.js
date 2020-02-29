@@ -9,6 +9,11 @@ $(function(){
     $(".botaoReiniciar").click(reiniciaJogo)
 });
 
+function atualizaTempoInicial(tempo){
+    tempoInicial = tempo
+    $(".tempoDigitacao").text(tempo)
+}
+
 function atualizaTamanhoFrase(){
     var frase = $(".fraseDesafio").text()
     var numeroPalavras = frase.split(" ").length
@@ -29,8 +34,8 @@ function inicializaContadores(){
 };
 
 function inicializaCronometro() {
-    var tempoRestante = $(".tempoDigitacao").text();
     campo.one("focus", function() {
+        var tempoRestante = $(".tempoDigitacao").text();
         var cronometro = setInterval(function() {
             tempoRestante--;
             $(".tempoDigitacao").text(tempoRestante);
@@ -49,8 +54,8 @@ function finalizaJogo(){
 };
 
 function comparaPalavras(){
-    var frase = $(".fraseDesafio").text()
     campo.on("input", function(){
+        var frase = $(".fraseDesafio").text()
     var digitado = campo.val()
     var comparavel = frase.substr(0,digitado.length)
         if(digitado == comparavel){
